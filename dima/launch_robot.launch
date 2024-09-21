@@ -1,0 +1,7 @@
+<launch>
+	<param name ="robot_description" textfile = "$(find dima)/src/robot.urdf" />
+	<arg name="rvizconfig" default="$(find dima)/rviz_configs/settings_rviz.rviz" />
+	<node name = "robot_state_publisher" pkg = "robot_state_publisher" type = "robot_state_publisher"/>
+ 	<node pkg="dima" type="publisher.py" name="publisher_robot"/> 
+	<node name = "rviz" pkg = "rviz" type = "rviz" args="-d $(arg rvizconfig)" />	
+</launch>
